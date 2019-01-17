@@ -29,7 +29,7 @@ if [ -f ./snippet.js ] && grep -q "$startPattern" ./snippet.js ; then
     snippet=$(cat ./snippet.js)
 else
     # load snippet remotely
-    snippet=$(curl -q 'https://raw.githubusercontent.com/MashupMill/slack-themes/master/snippet.js')
+    snippet=$(curl -s 'https://raw.githubusercontent.com/MashupMill/slack-themes/master/snippet.js')
 fi
 
 # strip out the existing tweak

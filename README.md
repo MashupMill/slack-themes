@@ -5,7 +5,7 @@
 Run the following command...
 
 ```bash
-wget -O - https://raw.githubusercontent.com/MashupMill/slack-themes/master/install.sh | sudo bash
+curl -s https://raw.githubusercontent.com/MashupMill/slack-themes/master/install.sh | sudo bash
 ```
 
 > Note: Currently this script is written for macOS (basically its just the path to slack that is specific to macOS). Though it may work on other systems if you take the [`install.sh`](./install.sh) script and run it like `sudo ./install.sh /path/to/Slack`
