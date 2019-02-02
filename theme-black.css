@@ -166,10 +166,6 @@ ts-message .mention {
     border: 2px solid #008952 !important;
     color: white !important;
 }
-#primary_file_button:hover {
-    border: 2px solid #006039 !important;
-    background: #006039 !important;
-}
 #primary_file_button {
     position: absolute;
     bottom: 1.375rem;
@@ -187,6 +183,15 @@ ts-message .mention {
     -moz-transition: background 50ms, color 50ms;
     transition: background 50ms, color 50ms;
     border-radius: 6px 0 0 6px;
+}
+#primary_file_button, .p-threads_footer__input--legacy .p-message_input_plus {
+    border: 2px solid #008952 !important;
+    background: #008952 !important;
+    color: white !important;
+}
+#primary_file_button:hover, .p-threads_footer__input--legacy .p-message_input_plus:hover {
+    border: 2px solid #006039 !important;
+    background: #006039 !important;
 }
 .inline_file_upload {
     background: #008952 !important;
@@ -574,8 +579,27 @@ a:hover {
     width: 110px;
     color: white !important;
 }
-#msg_input {
-    background: #424242!important;
+#msg_form #msg_input {
+    
+}
+#msg_input,
+.p-threads_footer__input .p-message_input_field,
+.p-threads_footer__input .p-message_input_field.focus {
+    background: #424242 !important;
+    border-color: #424242;
+    color: #e6e6e6;
+}
+
+.p-threads_footer__input .p-message_input_field .ql-placeholder {
+    color: #e6e6e6;
+}
+#msg_form .msg_mentions_button,
+.p-threads_footer__input .c-texty_input__button {
+    color: #949494;
+}
+#msg_form #msg_input.focus ~ .msg_mentions_button:not(.hover),
+.c-texty_input.focus .c-texty_input__button {
+    color: #e6e6e6;
 }
 .p-file_list__empty {
     color: white !important;
