@@ -708,10 +708,10 @@ a.file_download_link:hover {
     background: #222;
 }
 .p_threads_view_load_newer_button:hover, .p_threads_view_load_older_button:hover {
-    background: #44444499;
+    background: #32323299;
 }
 .p_threads_view_load_newer_button, .p_threads_view_load_older_button {
-    background: #444444;
+    background: #323232;
 }
 .p-threads_view_root, .p_threads_view_load_newer_button, .p_threads_view_load_older_button, .p-threads_view_reply, .p-threads_view__footer {
     border-color: #666;
@@ -746,4 +746,7 @@ a.file_download_link:hover {
 }
 .c-icon_button--light.c-button-unstyled:hover, .c-icon_button--light:hover, .c-icon_button--light:link:hover {
     color: #94949499;
+}
+.p-threads_view_reply--new_reply {
+    background: #323232;
 }
