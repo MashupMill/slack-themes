@@ -8,7 +8,7 @@ if (enableDarkMode) {
       // Then get its webviews
       let webviews = document.querySelectorAll(".TeamView webview");
 
-      const cssUrls = ['https://raw.githubusercontent.com/MashupMill/slack-themes/master/black.css', 'https://raw.githubusercontent.com/MashupMill/slack-themes/master/theme-black.css'];
+      const cssUrls = [`https://raw.githubusercontent.com/MashupMill/slack-themes/master/black.css?_=BUST_A_CACHE`, `https://raw.githubusercontent.com/MashupMill/slack-themes/master/theme-black.css?_=BUST_A_CACHE`];
 
       const cssPromise = Promise.all(cssUrls.map(url => fetchCss(url))).then(cssFiles => cssFiles.join("\n"));
 
@@ -19,6 +19,7 @@ if (enableDarkMode) {
         s.innerHTML = css;
         document.head.appendChild(s);
       });
+
       // Wait for each webview to load
       webviews.forEach(webview => {
           webview.addEventListener('ipc-message', message => {
@@ -26,12 +27,12 @@ if (enableDarkMode) {
               // Finally add the CSS into the webview
                   cssPromise.then(css => {
                   let script = `
-  let s = document.createElement('style');
-  s.type = 'text/css';
-  s.id = 'slack-custom-css';
-  s.innerHTML = \`${css}\`;
-  document.head.appendChild(s);
-  `
+                    let s = document.createElement('style');
+                    s.type = 'text/css';
+                    s.id = 'slack-custom-css';
+                    s.innerHTML = \`${css}\`;
+                    document.head.appendChild(s);
+                    `;
                   webview.executeJavaScript(script);
               })
           });
