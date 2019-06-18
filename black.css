@@ -2374,6 +2374,12 @@ code {
     border-right: 1px solid #363636;
     color: #949494;
 }
+.CodeMirror .CodeMirror-code {
+    word-spacing: 0;
+}
+.c-file_gallery {
+    max-width: none;
+}
 .c-snippet .c-file_container {
     background-color: #222;
 }
