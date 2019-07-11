@@ -32,3 +32,14 @@ You will also very likely want to run slack in dev mode as well, which gives you
 ```bash
 SLACK_DEVELOPER_MENU=true open -a /Applications/Slack.app
 ```
+
+## Slack 4.0.0 update
+
+In version 4.0.0 Slack moved the `ssb-interop` into the electron archive and it is now minified and obfuscated. Fortunately it appears patching the JS file can largely remain the same. The main difference now, is we need to:
+
+1) Unpack the `app.asar` (the electron archive)
+2) Patch the `ssb-interop.bundle.js` file ... just append same old snippet to the end of the file
+3) Re-pack the `app.asar`
+4) Restart Slack ... initial testing, I saw some wonkyness trying to just refresh after that change
+
+I've made some updates to the installer to now check for this new file structure and added an attempt to patch the file. So far it looks good in the 2 minutes I've had it up.
