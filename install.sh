@@ -44,22 +44,16 @@ function patch_js_file() {
     # strip out the existing snippet
     local jsWithoutTheme=$(sed -e "\\|${startPattern}|,\\|${endPattern}|d" "$jsFile")
 
-    if [[ $DEV_MODE == "true" ]]; then
-        # write out the js file without the snippet
-        echo "${jsWithoutTheme}" > "$jsFile"
-
-        # add the snippet to the js file replacing the baseurl with localhost
-        echo "$snippet" | sed 's|https://raw.githubusercontent.com/MashupMill/slack-themes/master/|http://localhost:8164/|g' >> "$jsFile"
-
-        # start up a little server
-        npx http-server --cors -p 8164
-    fi
-
     # write out the js file without the snippet
     echo "${jsWithoutTheme}" > "$jsFile"
 
-    # add the snippet to the js file
-    echo "${snippet}" >> "$jsFile"
+    if [[ $DEV_MODE == "true" ]]; then
+        # add the snippet to the js file replacing the baseurl with localhost
+        echo "$snippet" | sed 's|https://raw.githubusercontent.com/MashupMill/slack-themes/master/|http://localhost:8164/|g' >> "$jsFile"
+    else
+        # add the snippet to the js file
+        echo "${snippet}" >> "$jsFile"
+    fi
 }
 
 jsFile=$(find "$baseDir" -name ssb-interop.js)
@@ -96,6 +90,13 @@ else
     rm -fr "tmpDir"
 
     echo "Please restart Slack if it is open."
+
+    if [[ $DEV_MODE == "true" ]]; then
+        # start up a little server
+        npx http-server --cors -p 8164
+
+        echo "Please re-run without dev mode to keep the changes"
+    fi
 fi
 
 
