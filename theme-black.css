@@ -40,3 +40,36 @@
 .c-file_gallery {
     max-width: none;
 }
+
+
+
+/* Fix for message box and header colors starting 7/22-ish */
+.p-workspace__input .p-message_input_field {
+    background: #424242;
+}
+
+footer, #autocomplete_menu.search_menu footer.unified {
+    background: #222222;
+}
+
+.p-classic_nav {
+    background: #222222;
+}
+
+.c-texty_autocomplete {
+    background: #333333;
+}
+
+.c-texty_autocomplete__result_highlight {
+    background: #222222;
+}
+
+/* make the 'not in channel' visible when typing out a user in a message */
+.c-unified_member__context.c-unified_member__not-in-channel-context--small, .c-unified_member__label--small, .c-usergroup__context.c-usergroup__not-in-channel-context--small {
+    color: rgba(230,230,230,.5);
+}
+
+/* make the virtual list have a dark background ... this is visible when doing quick scrolling over a large list of messages */
+.c-virtual_list {
+    background: #222222;
+}
