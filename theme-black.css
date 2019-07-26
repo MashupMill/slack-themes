@@ -73,3 +73,11 @@ footer, #autocomplete_menu.search_menu footer.unified {
 .c-virtual_list {
     background: #222222;
 }
+
+.p-unreads_view__header {
+    background: #333333;
+}
+
+.p-unreads_view__empty {
+    background: #222222;
+}
