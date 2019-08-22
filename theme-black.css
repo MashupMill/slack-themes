@@ -1,5 +1,9 @@
 /* Customizations */
 
+:root{
+    --sk_primary_background: var(--main-bg-color);
+}
+
 /* the plus button next to the message bar in a hover/active state */
 #msg_input:focus+#primary_file_button,
 #msg_input.focus+#primary_file_button,
