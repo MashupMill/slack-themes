@@ -1207,10 +1207,15 @@ a.c-member_slug, .c-member_slug--link, .c-mrkdwn__subteam--link {
   border-bottom-color: rgb(86, 87, 88);
   border-left-color: rgb(86, 87, 88);
   border-top-color: rgb(86, 87, 88);
+  background-color: var(--main-bg-color);
 }
 
 .c-message_kit__file__meta {
   color: var(--main-text);
+}
+
+.c-message_kit__footer_channel, .c-message_kit__reaction_condensed {
+  color: #f8f8f8
 }
 
 .c-message_list .c-scrollbar__bar {
@@ -1357,6 +1362,10 @@ a.c-member_slug, .c-member_slug--link, .c-mrkdwn__subteam--link {
   background-color: #616061;
 }
 
+.c-multi_pane_modal .c-sk-modal_header {
+  background-color: #222;
+}
+
 .c-multi_select_input__input--initial {
   background-color: #949494;
 }
@@ -1462,6 +1471,10 @@ a.c-member_slug, .c-member_slug--link, .c-mrkdwn__subteam--link {
 
 .c-select_button__content {
   color: var(--main-text);
+}
+
+.c-sk-modal__content__inner, .c-sk-modal_footer, .c-sk-modal_title_bar--pad_right {
+  background-color: var(--main-bg-color);
 }
 
 .c-tabs__tab {
@@ -2010,8 +2023,12 @@ a.c-member_slug, .c-member_slug--link, .c-mrkdwn__subteam--link {
 }
 
 .CodeMirror {
-  background: #000;
+  background: var(--main-dark-highlight) !important;
   border: 1px solid var(--main-dark-highlight);
+  color: var(--main-text) !important;
+}
+
+.CodeMirror-code div::before {
   color: var(--main-text) !important;
 }
 
@@ -3975,16 +3992,8 @@ a.c-member_slug, .c-member_slug--link, .c-mrkdwn__subteam--link {
   background: var(--main-bg-color);
 }
 
-.p-archives_banner {
-  background-color: var(--main-dark-highlight);
-}
-
-.p-archives_banner__data_range {
+.p-archives_banner, .p-archives_banner__data_range, .p-archives_banner__jump {
   background-color: var(--main-bg-color);
-  color: #f8f8f8;
-}
-
-.p-archives_banner__jump {
   color: #f8f8f8;
 }
 
@@ -4005,7 +4014,7 @@ a.c-member_slug, .c-member_slug--link, .c-mrkdwn__subteam--link {
   color: var(--main-text);
 }
 
-.p-dm_browser_modal__list_heading{
+.p-dm_browser_modal__list_heading {
   color: var(--main-text);
 }
 
@@ -4019,6 +4028,10 @@ a.c-member_slug, .c-member_slug--link, .c-mrkdwn__subteam--link {
 
 .p-channel_browser_list_item__create_info {
   color: var(--secondary-text);
+}
+
+.p-channel_details__heading, .p-channel_details__subsection {
+  color: #f8f8f8
 }
 
 .p-channel_insights .c-member__title {
@@ -4196,6 +4209,11 @@ a.c-member_slug, .c-member_slug--link, .c-mrkdwn__subteam--link {
 
 .p-channel-options--content_text {
   color: #949494 !important;
+}
+
+.p-context_bar {
+  background: var(--main-bg-color);
+  color: var(--main-text);
 }
 
 .p-custom_status_input__clear_icon {
@@ -4476,6 +4494,14 @@ a.c-member_slug, .c-member_slug--link, .c-mrkdwn__subteam--link {
 
 .p-message_pane__foreword__description, .p-message_pane__limited_history_alert {
   color: var(--main-text);
+}
+
+.p-message_pane_input__disabled {
+  background-color: var(--main-bg-color);
+}
+
+.p-message_pane_input__disabled_text {
+  color: #f8f8f8;
 }
 
 .p-message_pane__limited_history_foreword {
@@ -6884,7 +6910,7 @@ a.c-member_slug, .c-member_slug--link, .c-mrkdwn__subteam--link {
   color: var(--main-text);
 }
 
-.p-channel_name_input__label_title  {
+.p-channel_name_input__label_title {
   color: var(--secondary-text);
 }
 
@@ -9089,6 +9115,7 @@ textarea:focus {
 
 textarea.c-input_textarea.c-input_textarea--with_hint {
   color: #f8f8f8;
+  background-color: var(--main-highlight);
 }
 
 ts-jumper input[type=text] {
@@ -9593,8 +9620,8 @@ ts-thread {
   background-color: var(--main-dark-highlight) !important;
 }
 
-footer.p-workspace__primary_view_footer {
-  background-color: var(--main-bg-color);
+.workspace__primary_view_footer {
+  background-color: var(--main-bg-color) !important;
 }
 
 .p-unreads_view__header {
@@ -9611,4 +9638,44 @@ ts-thread ts-message.new_reply {
 
 ts-thread ts-message.new_reply:hover {
   background: var(--main-dark-highlight);
+}
+
+.p-message_pane_input__preview {
+  background-color: var(--main-dark-highlight) !important;
+}
+
+.p-message_pane_input__preview div {
+  color: var(--main-text) !important;
+}
+
+.c-select_button {
+  background-color: var(--main-dark-highlight) !important;
+}
+
+div[role=listbox] {
+  background-color: var(--main-dark-highlight) !important;
+}
+
+.c-select_options_list__option {
+  color: var(--main-text) !important;
+}
+
+.c-select_options_list__option--selected {
+  color: #3aa3e3 !important;
+}
+
+.c-select_options_list__option--active {
+  color: var(--main-text) !important;
+}
+
+.p-dm_browser_modal__list_row--active {
+  background-color: var(--main-dark-highlight) !important;
+}
+
+.p-call_button_base--active {
+  background-color: var(--main-highlight);
+}
+
+.p-calls_settings_panel {
+  background-color: var(--main-bg-color);
 }
