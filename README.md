@@ -1,5 +1,15 @@
 # slack-themes
 
+## **Slack now has a built-in dark theme**
+
+To activate the dark theme, open the Slack preferences, go to Themes and select the Dark theme.
+
+Now that slack has a built-in dark theme, there will not be any further updates to this project. To uninstall this theme, you can either re-install Slack, or run the following command to uninstall
+
+```bash
+curl -s https://raw.githubusercontent.com/MashupMill/slack-themes/master/uninstall.sh | sudo bash
+```
+
 ## Installation
 
 Run the following command...

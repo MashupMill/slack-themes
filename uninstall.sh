@@ -46,14 +46,6 @@ function patch_js_file() {
 
     # write out the js file without the snippet
     echo "${jsWithoutTheme}" > "$jsFile"
-
-    if [[ $DEV_MODE == "true" ]]; then
-        # add the snippet to the js file replacing the baseurl with localhost
-        echo "$snippet" | sed 's|https://raw.githubusercontent.com/MashupMill/slack-themes/master/|http://localhost:8164/|g' >> "$jsFile"
-    else
-        # add the snippet to the js file
-        echo "${snippet}" >> "$jsFile"
-    fi
 }
 
 jsFile=$(find "$baseDir" -name ssb-interop.js)
